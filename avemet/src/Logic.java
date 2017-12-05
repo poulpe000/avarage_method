@@ -7,14 +7,14 @@ public class Logic {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("Введите числа: ");
-        int insertedCount = Integer.parseInt(reader.readLine());
 
         float result = 0;
-
-        for(int i = 0; i < insertedCount; i++) {
-            float insertedNum = Float.parseFloat(reader.readLine());
-            result += insertedNum;
+        if(!reader.equals("stop")) {
+            do {
+                float insertedNum = Float.parseFloat(reader.readLine());
+                result += insertedNum;
+            } while (!reader.equals("stop"));
         }
-        System.out.println(result/insertedCount);
+        else System.out.println(result);
     }
 }
